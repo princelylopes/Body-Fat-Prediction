@@ -1,0 +1,64 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>Body fat Predicter</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+</head>
+<body class="container" style="padding-bottom:10%">
+<h1 class="ct">BODY FAT PREDICTOR</h1>
+<div class ="border border-dark rounded p-5 bg "  style=" width=40%, margin-left:30%,margin-right:30%,margin-top:10%,margin-bottom:10%">
+<form  action={% url 'predict' %} method="post">
+{% csrf_token %}
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Weight(kg)</label>
+    <input type="floatformat" class="form-control" name="a">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Chest Circumference(cm)</label>
+    <input type="floatformat" class="form-control" name="b">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Abdomen Circumference(cm)</label>
+    <input type="floatformat" class="form-control" name="c">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Hip Circumference(cm)</label>
+    <input type="floatformat" class="form-control" name="d">
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Under water Density</label>
+    <input type="floatformat" class="form-control" name="e">
+  </div>
+
+  <button type="submit" class="btn btn-success">Predict</button>
+</form>
+</div>
+</body>
+<style>
+
+.px-2 {
+  padding-left: ($spacer * .5) !important;
+  padding-right: ($spacer * .5) !important;
+}
+
+.bg {
+  background-color: rgb(81, 127, 235);
+  }
+.ct {
+  margin-left: 30% !important;
+  width: 70%;
+  padding: 10px;
+}  
+.mb-3{
+  font-size: 120% !important;
+}
+
+</style>
+</html>
